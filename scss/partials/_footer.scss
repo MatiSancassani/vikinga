@@ -1,0 +1,19 @@
+footer {
+    background: $colorprincipal;
+    .elementos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        a {
+            color: white;
+            font-size: 2rem;
+        &:hover {
+            color: $colorsecundario;
+        }
+        }
+
+    }
+
+}

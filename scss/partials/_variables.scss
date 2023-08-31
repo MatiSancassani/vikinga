@@ -1,0 +1,20 @@
+$colorprincipal: #AA84F0;
+$colorsecundario: #D9D9D9;
+$fuenteprimaria:'Bebas Neue', sans-serif;
+$fuentesecundaria: 'Montserrat', sans-serif;
+
+@mixin flex-with-vh {
+        display: flex;        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+}
+@mixin flex($justify, $alling) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $alling;
+}
+@mixin border {
+    border: solid 1px black;
+}
