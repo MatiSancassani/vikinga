@@ -45,7 +45,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        a {
+        .boton-agregar {
         @include flex(center, center);
         background: $colorprincipal;
         color: white;

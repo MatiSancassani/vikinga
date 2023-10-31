@@ -1,0 +1,97 @@
+/* Estilos del carrito */
+
+.carrito h1 {
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    margin: 1rem;
+
+}
+.carrito h2 {    
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    margin: 2rem;
+}
+main .productos-del-carrito .productos-carrito img {
+    border-radius: 1rem;
+    width: 7rem;
+    height: 7rem;
+    margin: 1rem;
+}
+main .productos-carrito {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #D9D9D9;
+    margin: 2rem;
+    border-radius: 1rem;
+    color: black;
+    font-weight: 700;
+
+}
+.carrito .carrito-eliminar {
+    font-size: 1.5rem;
+    color: red;
+    border: none;
+    background: transparent;
+    
+
+}
+/* Submenu del carrito */
+main .vaciar-carrito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .vaciar-carrito p {    
+    background-color: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid red;
+    padding: 1rem;
+    cursor: pointer;
+}
+main .carrito-submenu {
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem 1rem 1.5rem 1rem;
+    font-size: 1.5rem;
+}
+main .carrito-submenu p {
+    margin-bottom: 0px;
+}
+main .carrito-comprar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+main .carrito-total {
+    background: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    padding: 1rem;
+    margin-right: -1.3rem;
+}
+main .carrito-confirmar {
+    background: #AA84F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: .35rem;   
+}
+main .carrito-comprar button {    
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    background: transparent;    
+    text-transform: uppercase;
+}
+
+main .disabled {
+    display: none;
+}
