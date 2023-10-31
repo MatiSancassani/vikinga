@@ -2,7 +2,7 @@ const productos = [
     {
         id: "jean monica",
         titulo: "Jean Monica",
-        imagen: "../img/1.webp",
+        imagen: "./img/1.webp",
         description: "Jean liso tiro medio",
         precio: 1000,
         categoria: {
@@ -13,7 +13,7 @@ const productos = [
     {
         id: "campera dallas",
         titulo: "Campera Dallas",
-        imagen: "../img/2.webp",
+        imagen: "./img/2.webp",
         description: "Oversize negra con Roturas",
         precio: 1000,
         categoria: {
@@ -24,7 +24,7 @@ const productos = [
     {
         id: "parachute madrid",
         titulo: "Parachute Madrid",
-        imagen: "../img/3.webp",
+        imagen: "./img/3.webp",
         description: "De sire con elástico en cintura",
         precio: 1000,
         categoria: {
@@ -35,7 +35,7 @@ const productos = [
     {
         id: "jean kara",
         titulo: "Jean Kara",
-        imagen: "../img/4.webp",
+        imagen: "./img/4.webp",
         description: "Cargo con bolsillos y cierres dorados",
         precio: 1000,
         categoria: {
@@ -46,7 +46,7 @@ const productos = [
     {
         id: "jean aitiana",
         titulo: "Jean Aitiana",
-        imagen: "../img/5.webp",
+        imagen: "./img/5.webp",
         description: "Oxford elastizado",
         precio: 1000,
         categoria: {
