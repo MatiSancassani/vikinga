@@ -61,8 +61,8 @@ function agregarAlCarrito(e){
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-          background: "#FFF",
-          color: "black",
+          background: "#AA84F0",
+          color: "white",
           borderRadius: "2rem",
         },
         // offset: {
