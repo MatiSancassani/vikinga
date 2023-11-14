@@ -1,173 +1,15 @@
-const productos = [
-    {
-        id: "jean monica",
-        titulo: "Jean Monica",
-        imagen: "./img/1.webp",
-        description: "Jean liso tiro medio",
-        precio: 1000,
-        categoria: {
-            id: "jean monica",
-            titulo: "Jean Monica"
-        }
-    },
-    {
-        id: "campera dallas",
-        titulo: "Campera Dallas",
-        imagen: "./img/2.webp",
-        description: "Oversize negra con Roturas",
-        precio: 1000,
-        categoria: {
-            id: "campera dallas",
-            titulo: "Campera Dallas"
-        }
-    },
-    {
-        id: "parachute madrid",
-        titulo: "Parachute Madrid",
-        imagen: "./img/3.webp",
-        description: "De sire con elástico en cintura",
-        precio: 1000,
-        categoria: {
-            id: "parachute madrid",
-            titulo: "Parachute Madrid"
-        }
-    },
-    {
-        id: "jean kara",
-        titulo: "Jean Kara",
-        imagen: "./img/4.webp",
-        description: "Cargo con bolsillos y cierres dorados",
-        precio: 1000,
-        categoria: {
-            id: "jean kara",
-            titulo: "Jean Kara"
-        }
-    },
-    {
-        id: "jean aitiana",
-        titulo: "Jean Aitiana",
-        imagen: "./img/5.webp",
-        description: "Oxford elastizado",
-        precio: 1000,
-        categoria: {
-            id: "jean aitiana",
-            titulo: "Jean Aitiana",
-        }
-    },
-    // {
-    //     id: "jean monica",
-    //     titulo: "Jean Monica",
-    //     imagen: "../img/01.webp",
-    //     description: "Jean liso tiro medio",
-    //     precio: 1000,
-    //     categoria: {
-    //         id: "jean monica",
-    //         titulo: "Jean Monica"
-    //     }
-    // },
-    // {
-    //     id: "jean monica",
-    //     titulo: "Jean Monica",
-    //     imagen: "../img/02.webp",
-    //     description: "Jean liso tiro medio",
-    //     precio: 1000,
-    //     categoria: {
-    //         id: "jean monica",
-    //         titulo: "Jean Monica"
-    //     }
-    // },
-    // {
-    //     id: "jean monica",
-    //     titulo: "Jean Monica",
-    //     imagen: "../img/03.webp",
-    //     description: "Jean liso tiro medio",
-    //     precio: 1000,
-    //     categoria: {
-    //         id: "jean monica",
-    //         titulo: "Jean Monica"
-    //     }
-    // },
-    // {
-    //     id: "jean monica",
-    //     titulo: "Jean Monica",
-    //     imagen: "../img/04.webp",
-    //     description: "Jean liso tiro medio",
-    //     precio: 1000,
-    //     categoria: {
-    //         id: "jean monica",
-    //         titulo: "Jean Monica"
-    //     }
-    // },
-    // {
-    //     id: "jean monica",
-    //     titulo: "Jean Monica",
-    //     imagen: "../img/05.webp",
-    //     description: "Jean liso tiro medio",
-    //     precio: 1000,
-    //     categoria: {
-    //         id: "jean monica",
-    //         titulo: "Jean Monica"
-    //     }
-    // },
-    // {
-    //     id: "jean monica",
-    //     titulo: "Jean Monica",
-    //     imagen: "../img/06.webp",
-    //     description: "Jean liso tiro medio",
-    //     precio: 1000,
-    //     categoria: {
-    //         id: "jean monica",
-    //         titulo: "Jean Monica"
-    //     }
-    // },
-    // {
-    //     id: "jean monica",
-    //     titulo: "Jean Monica",
-    //     imagen: "../img/07.webp",
-    //     description: "Jean liso tiro medio",
-    //     precio: 1000,
-    //     categoria: {
-    //         id: "jean monica",
-    //         titulo: "Jean Monica"
-    //     }
-    // },
-    // {
-    //     id: "jean monica",
-    //     titulo: "Jean Monica",
-    //     imagen: "../img/08.webp",
-    //     description: "Jean liso tiro medio",
-    //     precio: 1000,
-    //     categoria: {
-    //         id: "jean monica",
-    //         titulo: "Jean Monica"
-    //     }
-    // },
-    // {
-    //     id: "jean monica",
-    //     titulo: "Jean Monica",
-    //     imagen: "../img/09.webp",
-    //     description: "Jean liso tiro medio",
-    //     precio: 1000,
-    //     categoria: {
-    //         id: "jean monica",
-    //         titulo: "Jean Monica"
-    //     }
-    // },
-    // {
-    //     id: "jean monica",
-    //     titulo: "Jean Monica",
-    //     imagen: "../img/10.webp",
-    //     description: "Jean liso tiro medio",
-    //     precio: 1000,
-    //     categoria: {
-    //         id: "jean monica",
-    //         titulo: "Jean Monica"
-    //     }
-    // },
-]
+let productos = [];
+fetch("./js/productos.json")
+    .then(response => response.json()) 
+    .then(data => {
+        productos = data;        
+        cargarProductos(productos);
+    })
 
 const productosHtml = document.querySelector("#productosJs");
 let botonAgregar = document.querySelectorAll(".boton-agregar");
+const numerito = document.querySelector("#numerito");
+
 
 function cargarProductos(productosCargados) {
     productosHtml.innerHTML = "";
@@ -188,8 +30,7 @@ function cargarProductos(productosCargados) {
     })
 
     actualizarBoton ();
-}
-cargarProductos(productos);
+};
 
 
 function actualizarBoton () {
@@ -204,13 +45,35 @@ let productosEnElCarritoLocalS = localStorage.getItem("Productos-carrito");
 
 if (productosEnElCarritoLocalS) {
     productosEnCarrito = JSON.parse(productosEnElCarritoLocalS);
+    actualizarNumerito();
 } else {
     productosEnCarrito = [];
 }
 
 function agregarAlCarrito(e){
+    Toastify({
+        text: "Agregado con exito",
+        duration: 3000,
+        destination: "../carrito.html",
+        newWindow: true,
+        // close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "#FFF",
+          color: "black",
+          borderRadius: "2rem",
+        },
+        offset: {
+            x: "1rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: "5rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
     const idButton = e.currentTarget.id;
     const productosAgregados = productos.find(productos => productos.id === idButton);
+   
     if (productosEnCarrito.some(productos => productos.id === idButton)) {
         const index = productosEnCarrito.findIndex(productos => productos.id === idButton);
         productosEnCarrito[index].cantidad++
@@ -218,22 +81,14 @@ function agregarAlCarrito(e){
     } else {
         productosAgregados.cantidad = 1;
         productosEnCarrito.push(productosAgregados); // Agregamos un producto a nuestro array (productosEnCarrito = [];) haciendo click en el boton
-    }
-
+    };
     localStorage.setItem("Productos-carrito", JSON.stringify(productosEnCarrito));
+    actualizarNumerito();
 }
 
 // Traemos la info del localStorage al carrito.html
 
-
-
-
-
-
-/* <div class="columna tarjetas">
-          <img src="./img/1.webp" alt="Jean liso media altura">
-          <h6>Jean Monica</h6>          
-          <p>Jean liso tiro medio</p>  
-          <p>$ 9999</p>        
-          <a href="">Agregar al carrito</a>
-        </div> */
+function actualizarNumerito() {
+    let nuevoNumero = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0); 
+    numerito.innerText = nuevoNumero;
+}

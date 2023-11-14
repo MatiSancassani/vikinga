@@ -1,11 +1,11 @@
 let productosEnElCarrito = localStorage.getItem("Productos-carrito");
-
 productosEnElCarrito = JSON.parse(productosEnElCarrito);
 
 const carritoVacio = document.querySelector("#carrito-vacio");
 const contenedorProductos = document.querySelector("#contenedor-carrito");
 const carritoAcc = document.querySelector("#carrito-acc");
 let botonRemove = document.querySelectorAll(".carrito-eliminar");
+let vaciarCarrito = document.querySelector("#vaciar-carrito");
 
 
 
@@ -13,6 +13,7 @@ function cargarCarrito () {
     if(productosEnElCarrito && productosEnElCarrito.length > 0){
         carritoVacio.classList.add("disabled");
         contenedorProductos.classList.remove("disabled");
+        carritoAcc.classList.remove("disabled");
         // carritoAcc.classList.remove("disabled");
     
         contenedorProductos.innerHTML = "";
@@ -39,7 +40,7 @@ function cargarCarrito () {
                     <small>Subtotal</small>
                     <p>$${producto.precio * producto.cantidad}</p>
                 </div>
-            <button class="carrito-eliminar" id="${producto.id}"><i class="bi bi-trash3"></i></button>
+            <button class="carrito-eliminar" id="${producto.id}"><i class="bi bi-trash3"></i></button>            
             `;
     
             contenedorProductos.append(div);
@@ -48,7 +49,8 @@ function cargarCarrito () {
     
     } else {
         carritoVacio.classList.remove("disabled");
-        contenedorProductos.classList.add("disabled");
+        contenedorProductos.classList.add("disabled");        
+        carritoAcc.classList.add("disabled");
         // carritoAcc.classList.add("disabled");
     }
 
@@ -73,3 +75,24 @@ function eliminarDelCarrito (e) {
 
     localStorage.setItem("Productos-carrito", JSON.stringify(productosEnElCarrito));
 }
+
+vaciarCarrito.addEventListener("click", vaciarCarro);
+
+function vaciarCarro() {
+    Swal.fire({
+        title: '¿Estás seguro?',
+        icon: 'question',
+        html: `Se van a borrar ${productosEnElCarrito.reduce((acc, producto) => acc + producto.cantidad, 0)} productos.`,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            productosEnElCarrito.length = 0;
+            localStorage.setItem("Productos-carrito", JSON.stringify(productosEnElCarrito));
+            cargarCarrito ();
+        }
+      })
+}
+

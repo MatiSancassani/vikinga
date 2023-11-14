@@ -45,7 +45,7 @@ main .vaciar-carrito {
 main .vaciar-carrito p {    
     background-color: #ffffff;
     border-radius: 1rem;
-    border: 1px solid red;
+    border: 1px solid #AA84F0;
     padding: 1rem;
     cursor: pointer;
 }
@@ -80,18 +80,23 @@ main .carrito-confirmar {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom-right-radius: 1rem;
-    border-top-right-radius: 1rem;
-    padding: .35rem;   
+    border-radius: 1rem;
 }
 main .carrito-comprar button {    
     color: white;
     font-size: 1.5rem;
-    border: none;
+    padding: 1rem;      
+    border-radius: 1rem;
     background: transparent;    
-    text-transform: uppercase;
+    border: 1px solid #AA84F0;
 }
-
+main .carrito-comprar button:hover {
+    background-color: #ffffff;
+    color: black;
+    border-radius: 1rem;
+    border: 1px solid #AA84F0;
+    padding: 1rem;
+}
 main .disabled {
     display: none;
 }

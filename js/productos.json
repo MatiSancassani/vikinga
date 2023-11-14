@@ -1,0 +1,57 @@
+[
+    {
+        "id":"jean monica",
+        "titulo": "Jean Monica",
+        "imagen": "./img/1.webp",
+        "description": "Jean liso tiro medio",
+        "precio": 1000,
+        "categoria": {
+            "id":"jean monica",
+            "name": "Jean Monica"
+        }
+    },
+    {
+        "id":"campera dallas",
+        "titulo": "Campera Dallas",
+        "imagen": "./img/2.webp",
+        "description": "Oversize negra con Roturas",
+        "precio": 1000,
+        "categoria": {
+            "id":"campera dallas",
+            "name": "Campera Dallas"
+        }
+    },
+    {
+        "id":"parachute madrid",
+        "titulo": "Parachute Madrid",
+        "imagen": "./img/3.webp",
+        "description": "De sire con elástico en cintura",
+        "precio": 1000,
+        "categoria": {
+            "id":"parachute madrid",
+            "name": "Parachute Madrid"
+        }
+    },
+    {
+        "id":"jean kara",
+        "titulo": "Jean Kara",
+        "imagen": "./img/4.webp",
+        "description": "Cargo con bolsillos y cierres dorados",
+        "precio": 1000,
+        "categoria": {
+            "id":"jean kara",
+            "name": "Jean Kara"
+        }
+    },
+    {
+        "id":"jean aitiana",
+        "titulo": "Jean Aitiana",
+        "imagen": "./img/5.webp",
+        "description": "Oxford elastizado",
+        "precio": 1000,
+        "categoria": {
+            "id":"jean aitiana",
+            "name": "Jean Aitiana"
+        }
+    }
+]

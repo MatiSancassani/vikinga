@@ -15,6 +15,11 @@ header {
         @extend .nav-link;
     }
     nav {
+        #numerito {
+            color: white;
+            position: relative;
+            right: 0.5rem;
+        }
         .loguitos {
             display: flex;
             justify-content: center;

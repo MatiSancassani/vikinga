@@ -186,6 +186,11 @@ header .nav-link:focus, header .focus-menu1:focus {
   border-radius: 5px;
   color: white;
 }
+header nav #numerito {
+  color: white;
+  position: relative;
+  right: 0.5rem;
+}
 header nav .loguitos {
   display: flex;
   justify-content: center;
@@ -361,7 +366,7 @@ main .columna .boton-agregar {
 }
 main .columna .boton-agregar:hover {
   background: white;
-  color: #AA84F0;
+  color: black;
   border: 1px solid #AA84F0;
 }
 main .columna p {
@@ -585,7 +590,7 @@ main .vaciar-carrito {
 main .vaciar-carrito p {
   background-color: #ffffff;
   border-radius: 1rem;
-  border: 1px solid red;
+  border: 1px solid #AA84F0;
   padding: 1rem;
   cursor: pointer;
 }
@@ -625,17 +630,24 @@ main .carrito-confirmar {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom-right-radius: 1rem;
-  border-top-right-radius: 1rem;
-  padding: 0.35rem;
+  border-radius: 1rem;
 }
 
 main .carrito-comprar button {
   color: white;
   font-size: 1.5rem;
-  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
   background: transparent;
-  text-transform: uppercase;
+  border: 1px solid #AA84F0;
+}
+
+main .carrito-comprar button:hover {
+  background-color: #ffffff;
+  color: black;
+  border-radius: 1rem;
+  border: 1px solid #AA84F0;
+  padding: 1rem;
 }
 
 main .disabled {
