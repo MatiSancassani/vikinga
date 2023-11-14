@@ -52,12 +52,12 @@ if (productosEnElCarritoLocalS) {
 
 function agregarAlCarrito(e){
     Toastify({
-        text: "Agregado con exito",
-        duration: 3000,
+        text: "Agregado",
+        duration: 2000,
         destination: "../carrito.html",
         newWindow: true,
         // close: true,
-        gravity: "top", // `top` or `bottom`
+        gravity: "bottom", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
@@ -65,10 +65,10 @@ function agregarAlCarrito(e){
           color: "black",
           borderRadius: "2rem",
         },
-        offset: {
-            x: "1rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-            y: "5rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
-          },
+        // offset: {
+        //     x: "1rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+        //     y: "5rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
+        //   },
         onClick: function(){} // Callback after click
       }).showToast();
     const idButton = e.currentTarget.id;

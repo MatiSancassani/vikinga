@@ -80,13 +80,13 @@ vaciarCarrito.addEventListener("click", vaciarCarro);
 
 function vaciarCarro() {
     Swal.fire({
-        title: '¿Estás seguro?',
-        icon: 'question',
-        html: `Se van a borrar ${productosEnElCarrito.reduce((acc, producto) => acc + producto.cantidad, 0)} productos.`,
+        title: 'Estas por vaciar el carrito!',
+        icon: 'warning',
+        html: `Eliminar ${productosEnElCarrito.reduce((acc, producto) => acc + producto.cantidad, 0)} productos?`,
         showCancelButton: true,
         focusConfirm: false,
-        confirmButtonText: 'Sí',
-        cancelButtonText: 'No'
+        confirmButtonText: 'Aceptar',
+        cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.isConfirmed) {
             productosEnElCarrito.length = 0;
